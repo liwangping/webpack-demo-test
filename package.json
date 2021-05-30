@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
     "start": "webpack server --open ",
-    "dev": "cross-env NODE_ENV=development webpack serve --progress --hot --config webpack.dev.js"
+    "dev": "cross-env NODE_ENV=development webpack serve --progress --hot --config webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --color --config webpack.build.js"
   },
   "keywords": [],
   "author": "",

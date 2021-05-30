@@ -8,7 +8,7 @@ const pkg = require("./package");
 module.exports = merge(common, {
   mode: "production",
 
-  plugin: [
+  plugins: [
     new webpack.BannerPlugin({
       banner: `Last update: ${dayjs().format(
         "YYYY-MM-DD HH:mm:ss"
