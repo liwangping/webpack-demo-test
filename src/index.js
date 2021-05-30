@@ -1,5 +1,6 @@
 import _ from "lodash";
 import "./demo.less";
+import "./style.css";
 import Icon from "./icon.png";
 import Data from "./data.xml";
 import Notes from "./data.csv";
@@ -9,7 +10,7 @@ function component() {
   const element = document.createElement("div");
 
   // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
+  element.innerHTML = _.join(["Hello2", "webpack"], " ");
   element.classList.add("hello");
 
   // add thw image to our existing div

@@ -2,16 +2,31 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: { index: "./src/index.js" },
+  entry: { main: "./src/index.js" },
   module: {
     rules: [
       {
-        test: /\.css/i,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.less$/i,
-        use: ["style-loader", "css-loader", "less-loader"],
+        test: /\.(css|less)$/i,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "less-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/i,
