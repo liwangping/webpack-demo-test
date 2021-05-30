@@ -8,6 +8,12 @@ import TestData from "./test.json";
 
 function component() {
   const element = document.createElement("div");
+  let eles = true;
+  let it = {
+    name: "lwp",
+  };
+  console.log("test:", eles ?? 1);
+  console.log("test:", it?.name);
 
   // Lodash, currently included via a script, is required for this line to work
   element.innerHTML = _.join(["Hello2", "webpack"], " ");
