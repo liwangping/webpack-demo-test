@@ -2,9 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
-  entry: { index: "./src/index.js", print: "./src/print.js" },
-  devtool: "inline-source-map",
+  entry: { index: "./src/index.js" },
   module: {
     rules: [
       {
@@ -28,9 +26,6 @@ module.exports = {
         use: ["xml-loader"],
       },
     ],
-  },
-  devServer: {
-    contentBase: "./dist",
   },
   plugins: [
     new HtmlWebpackPlugin({
