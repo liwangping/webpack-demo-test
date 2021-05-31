@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: { main: "./src/index.js" },
+  entry: { main: "./src/index.jsx" },
   module: {
     rules: [
       {
@@ -44,25 +44,18 @@ module.exports = {
         test: /\.xml$/i,
         use: ["xml-loader"],
       },
-    ],
-    module: {
-      rules: [
-        {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env"],
-            },
-          },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
         },
-      ],
-    },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Output Management",
+      template: path.join(__dirname, "./index.html"),
     }),
   ],
   output: {
