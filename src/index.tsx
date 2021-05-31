@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Tip from "./Tip.jsx";
+import Tip from "./Tip";
 
 const App = () => (
   <div>
